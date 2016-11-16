@@ -1,0 +1,16 @@
+---
+declared-services:
+  conversation-simple-demo-test1:
+    label: conversation
+    plan: free
+applications:
+- name: telecom-bot
+  command: npm start
+  path: .
+  memory: 256M
+  instances: 1
+  services:
+  - conversation-service
+  env:
+    NPM_CONFIG_PRODUCTION: false
+    WORKSPACE_ID: 01676994-41df-48a5-8c3f-ee5772d34076
